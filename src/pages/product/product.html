@@ -7,12 +7,47 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>product</ion-title>
+    <ion-title>{{product[0].name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
+    <ion-card>
 
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/imgs//{{product[0].img}}">
+          </ion-avatar>
+          <h2>{{product[0].name}}</h2>
+          <p>${{product[0].price}}</p>
+        </ion-item>
+      
+        <img src="assets/imgs//{{product[0].img}}">
+      
+        <ion-card-content>
+          <p>{{product[0].description}}</p>
+        </ion-card-content>
+      
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="cart"></ion-icon>
+              <div>Buy</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="star"></ion-icon>
+              <div>5</div>
+            </button>
+          </ion-col>
+          <ion-col align-self-center text-center>
+            <ion-note>
+              In Stock
+            </ion-note>
+          </ion-col>
+        </ion-row>
+      
+      </ion-card>
 </ion-content>

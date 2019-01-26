@@ -13,9 +13,25 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-searchbar ng-model="search" (keyup)="searchProduct(this.search)" ></ion-searchbar>
+<ion-content padding class="card-background-page">
+  <ion-searchbar  ng-model="search" (keyup)="searchProduct(this.search)" ></ion-searchbar>
 
-  
-  <button ion-button clear block (click)="gotoProduct()">Product</button>
+  <ion-grid padding>
+    <ion-row *ngFor="let item of products" >
+      <ion-col>
+          <ion-card (click) = "gotoProduct(item.id)">
+            <img src="assets/imgs/{{item.img}}"/>
+            <ion-card-content>
+              <ion-card-title>
+                {{item.name}}
+                </ion-card-title>
+              <p>
+                Price: ${{item.price}} 
+                Brand: {{item.brand}}
+              </p>
+            </ion-card-content>
+          </ion-card>   
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
